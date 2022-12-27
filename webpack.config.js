@@ -50,6 +50,17 @@ module.exports = {
         generator: { 
           filename: 'font/[name].[hash:6][ext]' // 放到dist/font文件夹, 文件名格式如左
         }
+      },
+      // babel处理高等级的js语法
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       }
     ],
   },
