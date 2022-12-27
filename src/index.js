@@ -13,7 +13,12 @@ import './less/index.less'
 
 // webpack打包图片
 import image from '../assets/images/1.gif'
-
 let theImg = document.createElement('img')
 theImg.src = image
 document.body.appendChild(theImg)
+
+// 打包字体文件
+import '../assets/fonts/iconfont.css'
+let theI = document.createElement('i')
+theI.className = 'iconfont icon-qq'
+document.body.appendChild(theI)

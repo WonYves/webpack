@@ -16,17 +16,17 @@ module.exports = {
   plugins: [
     // 自动生成html
     new HtmlWebpackPlugin({
-    title:'Wiess',
-    template:'./public/index.html'
-  })],
-    // 加载器
+      title: 'Wiess',
+      template: './public/index.html'
+    })],
+  // 加载器
   module: {
     rules: [
       // 处理css
       {
         test: /\.css$/i,
         use: [
-          "style-loader", 
+          "style-loader",
           "css-loader"],
       },
       // 处理less
@@ -43,6 +43,14 @@ module.exports = {
         test: /\.(png|jpg|gif|jpeg)$/i, // 匹配图片文件
         type: 'asset' // 在导出一个 data URI 和一个单独的文件之间自动选择
       },
+      // 识别字体文件
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        type: 'asset/resource',  // 当做静态资源直接复制文件
+        generator: { 
+          filename: 'font/[name].[hash:6][ext]' // 放到dist/font文件夹, 文件名格式如左
+        }
+      }
     ],
   },
 };
