@@ -38,6 +38,11 @@ module.exports = {
           'less-loader',
         ],
       },
+      // 处理图片
+      {
+        test: /\.(png|jpg|gif|jpeg)$/i, // 匹配图片文件
+        type: 'asset' // 在导出一个 data URI 和一个单独的文件之间自动选择
+      },
     ],
   },
 };
