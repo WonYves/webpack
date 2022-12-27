@@ -22,3 +22,7 @@ import '../assets/fonts/iconfont.css'
 let theI = document.createElement('i')
 theI.className = 'iconfont icon-qq'
 document.body.appendChild(theI)
+
+// babel 降级js语法
+const arr = () => console.log(123)
+console.log(arr);
