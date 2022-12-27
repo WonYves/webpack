@@ -22,12 +22,14 @@ module.exports = {
     // 加载器
   module: {
     rules: [
+      // 处理css
       {
         test: /\.css$/i,
         use: [
           "style-loader", 
           "css-loader"],
       },
+      // 处理less
       {
         test: /\.less$/i,
         use: [
